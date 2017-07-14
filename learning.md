@@ -6,3 +6,8 @@
 
 `Complete`: 7/13/2017
 
+**Head First Python**
+
+`Start`: 7/14/2017
+
+`Complete`:
