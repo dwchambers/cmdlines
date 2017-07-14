@@ -1,5 +1,7 @@
 # Linux Commands Cheat Sheet
+
 ## `find` command
+
 **Find all files in the current directory**
 
 `find . -type f`
