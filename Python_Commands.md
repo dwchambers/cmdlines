@@ -1,5 +1,6 @@
-#Python Commands
-##Lists
+# Python Commands
+
+## Lists
 
 **Add abc to end of list "name"**
 
