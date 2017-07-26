@@ -6,8 +6,8 @@
 
 `Complete`: 7/13/2017
 
-**Head First Python**
+**Head First Python** (first and second editions)
 
 `Start`: 7/14/2017
 
-`Complete`:
+`Complete`: 7/26/2017
