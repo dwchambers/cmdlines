@@ -11,3 +11,7 @@
 `Start`: 7/14/2017
 
 `Complete`: 7/26/2017
+
+**Andrew Ng's Machine Learning Course (Coursera)**
+
+`Start`: 7/24/2017
