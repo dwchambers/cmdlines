@@ -77,3 +77,34 @@ affyMisSmall <- fetch(query, n=10); dbClearResult(query);    #select only the fi
 dbDisconnect(hg19)     #close the connection
 
 ```
+
+HDF5:
+
+```R
+source('http://bioconductor.org/biocLite.R')
+biocLite('rhdf5')
+library(rhdf5)
+```
+
+httr R package:
+
+```R
+library(httr)
+html = GET('url', authenticate('user','passwd')
+content = content(html, as='text')
+parsedHtml = htmlParse(content, asText=TRUE)
+xpathSApply(parsedHtml,  '//title', emlValue)
+
+#use a handle to not have to reauthenticate
+google = handle('http://www.google.com')
+pg1 = GET(handle=google, path='/')
+```
+
+Other useful R packages:
+
+foreign: Loads data from Minitab, S, SAS, SPSS, Stata, Systat, Octave
+RPostgresSQL
+RODBC: PostgreSQL, MySQL, Access, SQlite
+RMongo, rmongodb
+rdgal, rgeos, raster: read GIS data
+tuneR, seewave: read music data
