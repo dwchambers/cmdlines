@@ -31,7 +31,7 @@ rootNode <- xmlRoot(doc)
 rootNode[[1]]
 rootNode[[1]][[1]]
 xmlSApply(rootNode, xmlValue)
-xpathSApple(rootNode, '//name', xmlValue)
+xpathSApply(rootNode, '//name', xmlValue)
 ```
 
 more info from http://www.stat.berkeley.edu/~statcur/Workshop2/Presentations/XML.pdf
@@ -57,3 +57,23 @@ myjson <- toJSON(dataset, pretty=TRUE)
 
 more info on jsonlite http://www.r-bloggers.com/new-package-jsonlite-a-smarter-json-encoderdecoder/
  
+MySQL:
+
+```R
+library(RMySQL)
+ucscDb <- dbConnect(MySQL(), user='genome', host='genome-mysql.cse.ucsc.edu')
+result <- dbGetQuery(ucscDb, 'show databases;'); dbDisconnect(ucscDb);  #list databases (show databases; is a MySQL command)
+hg19 <- dbConnect(MySQL(), user='genome', db='hg19', host='genome-mysql.cse.ucsc.edu')  #pick database
+allTables <- dbListTables(hg19)
+
+dbListFields(hg19,'affyU133Plus2')   #column names
+dbGetQuery(hg19, 'select count(*) from affyU133Plus2')    #number of rows
+
+affyData <- dbReadTable(hg19, 'affyU133Plus2')    #store table as data frame
+query <- dbSendQuery(hg19, 'select * from affyU133Plus2 where misMatches between 1 and 3')
+affyMis <- fetch(query)
+affyMisSmall <- fetch(query, n=10); dbClearResult(query);    #select only the first ten rows
+
+dbDisconnect(hg19)     #close the connection
+
+```
